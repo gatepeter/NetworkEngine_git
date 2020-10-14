@@ -1,0 +1,17 @@
+{% extends "cisco/base.html" %}
+
+{% block title %} Login ! {% endblock %}
+
+{% block content %}
+    <div class="login">
+        <form action="" method="post">
+            {% csrf_token %}
+            <h5>Username:</h5>
+            <p><input type="text" name="username"></p>
+            <h5>Password:</h5>
+            <p><input type="password" name="password"></p>
+            <p><input type="submit" value="Login"></p>
+        </form>
+    </div>
+{% endblock %}
+

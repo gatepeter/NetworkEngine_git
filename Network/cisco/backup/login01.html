@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+
+<html>
+	<head>
+		<title> Transparent Login form </title>
+		<link rel="stylesheet" href="{% static 'cisco/stylelogin.css' %}">
+	
+
+	</head>
+	<body>
+	<div class="loginBox">
+		
+		<img src="{% static 'cisco/user.png' %}" class="user">
+		<h2>Log In Here</h2>
+		<form action="" method="post">
+            {% csrf_token %}
+			<p>Username</p>
+			<input type="text" name = "username" placeholder="Enter Username">
+			<p>Password</p>
+			<input type="password" name = "password" placeholder="Enter Password">
+			<input type="submit" name = "" value="sign In">
+			<a href="#"> Forget Password</a> 
+		</form>
+	</div>
+	</body>
+</html>

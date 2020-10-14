@@ -1,0 +1,94 @@
+{% extends "cisco/base.html" %}
+
+{% block title %} ControlSite! {% endblock %}
+
+{% block content %}
+    <center>
+    
+    <br>
+    <form action="/update/{{ IDe.id}}" method="post" class="post-form">
+        <input type="hidden" name="id" id="id" required maxlength="20" value="{{ IDe.id }}">
+        {% csrf_token %}
+        <table style="background-color: white;">
+            <tr>
+                <th class="tableshome" style="color:rgb(42, 129, 155); background-color: orange;"><h3>Device Name</h3></th>
+                <th class="tableshome" style="color:rgb(42, 129, 155); background-color: orange;"><h3>IP</h3></th>
+                <th class="tableshome" style="color:rgb(42, 129, 155); background-color: orange;"><h3>Device Type</h3></th>
+                <th class="tableshome" style="color:rgb(42, 129, 155); background-color: orange;"><h3>Descriptions</h3></th>
+                <th class="tableshome" style="color:rgb(42, 129, 155); background-color: orange;"><h3>Vender</h3></th>
+                <th class="tableshome" style="color:rgb(42, 129, 155); background-color: orange;"><h3>Manage</h3></th>
+                <th class="tableshome" style="color:rgb(42, 129, 155); background-color: orange;"><h3>Monitor</h3></th>
+                <!-- <td class="tablesaddevice">Device Name: </td> -->
+                <!-- <td><input type="text" name="name" value="{{ IDe.name }}"></td> -->
+            </tr>
+            <tr>
+                <td><input type="text" name="name" value="{{ IDe.name }}"></td>
+                <!-- <td class="tablesaddevice">IP Address: </td> -->
+                <td><input type="text" name="ip" value="{{ IDe.ip }}"></td>
+                <td>
+                    <select name="DeviceType" id="id_DeviceType">
+                        <option value="Router" selected>Router</option>
+                        <option value="Switch" selected>Switch</option>
+                        <option value="Firewall" selected>Firewall</option>
+                        <option value="Server" selected>Server</option>
+                        <option value="Modem" selected>Modem</option>
+                        <option value="Print" selected>Print</option>
+                        <option value="Camera" selected>Camera</option>
+                        <option value="Camera Record" selected>Camera Record</option>
+                        <option value="Database" selected>Database</option>
+                        <option value="Other" selected>Other</option>
+                    </select>
+                </td>
+                <td><input type="text" name="description" value="{{ IDe.description }}"></td>
+                <td>
+                    <select name="maker" id="id_maker">
+                        <option value="Cisco" selected>Cisco</option>
+                        <option value="Juniper" selected>Juniper</option>
+                        <option value="Tp-link" selected>Tp-link</option>
+                        <option value="Huawei" selected>Huawei</option>
+                        <option value="Hkvision" selected>Hkvision</option>
+                        <option value="HP" selected>HP</option>
+                        <option value="Fortinet" selected>Fortinet</option>
+                        <option value="Other" selected>Other</option>
+                        <option value="Ubuntu" selected>Ubuntu</option>
+                        <option value="Centos" selected>Centos</option>
+                        <option value="Kali" selected>Kali</option>
+                        <option value="Window" selected>Window</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="manager" id="id_manager">
+                        <option value="admin" selected>admin</option>
+                        <option value="Linhnh" selected>Linhnh</option>
+                        <option value="Phonght" selected>Phonght</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="EnableMonitor" id="id_EnableMonitor">
+                        <option value="Enable" selected>Enable</option>
+                      
+                        <option value="Disable">Disable</option>
+                    </select>
+                </td>
+                    <!-- <center>On:<input type="checkbox" name="EnableMonitr" value="enable"> Off:<input type="checkbox" name="EnableMonitor" value="disable"></td></center> -->
+                <!-- <td> <input type="text" name="EnableMonitor" value="{{ IDe.EnableMonitor }}"> -->
+                    <!-- enable <input type="checkbox" value="IDe.EnableMonitor">  -->
+                <!-- </td> -->
+            </tr>
+            <!-- <tr>
+                <td class="tablesaddevice">Description: </td>
+                <td><input type="text" name="description" value="{{ IDe.description }}"></td>
+            </tr> -->
+            <!-- <tr>
+                <td class="tablesaddevice">Monitor Acitve: </td>
+                <td><input type="" name="monitor"  value="{{ IDe.EnableMonitor }}"></td>
+            </tr> -->
+            
+        </table>
+        
+        <h3><input style="color: rgb(12, 25, 49); background-color: aqua ; font-size: 10pt; height: 50px" type="submit" value="UPDATE"> </h3>
+    </form>
+    <a href="/delete/{{ IDe.id }} "><input style="color: rgb(12, 25, 49); background-color: red ; font-size: 10pt; height: 50px" type="submit" value="DELETE"></a>
+    </center>
+{% endblock %}
+

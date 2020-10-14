@@ -1,0 +1,27 @@
+{% extends "cisco/base.html" %}
+
+{% block title %} ControlSite! {% endblock %}
+
+{% block content %}
+<!--    <h2 style="color:blue" align=""> Add New Device !</h2>-->
+    <br>
+    <center>
+        <table style="background-color: white;">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                    <tr>
+                        <th class="tableshome" style="color:rgb(42, 129, 155); background-color: orange;"><h3>Choose File</h3></th>
+                        <th class="tableshome" style="color:rgb(42, 129, 155); background-color: orange;"><h3>Import File Config</h3></th>
+                        <th class="tableshome" style="color:rgb(42, 129, 155); background-color: orange;"><h3>Export File Config</h3></th>
+                    </tr>
+                    <tr>
+                        <th class="tableshome" style="color:rgb(42, 129, 155); background-color: white;"><input type="file" name="myfile"></th>
+                        <th class="tableshome" style="color:rgb(42, 129, 155); background-color: white;"><button type="submit">Import File Config</button></th>
+            </form>
+                        <th class="tableshome" style="color:rgb(42, 129, 155); background-color: white;"><input type="submit" value="Export File Config" name="export" onclick="location.href='{% url 'cisco:export_excel' %}';"></th>
+                    </tr>
+        </table>
+    </center>
+{% endblock %}
+

@@ -1,0 +1,50 @@
+{% extends "cisco/base.html" %}
+
+{% block title %} ControlSite! {% endblock %}
+
+{% block content %}
+<!--    <h2 style="color:blue" align=""> Add New Device !</h2>-->
+    <br>
+    <br>
+    <center>
+    <form action="" method="post">
+        {% csrf_token %}
+        <table style="background-color: white;">
+            <tr>
+                <th class="tableshome" style="color:rgb(42, 129, 155); background-color: orange;"><h3>Device Name</h3></th>
+                <th class="tableshome" style="color:rgb(42, 129, 155); background-color: orange;"><h3>IP</h3></th>
+                <th class="tableshome" style="color:rgb(42, 129, 155); background-color: orange;"><h3>Device Type</h3></th>
+                <th class="tableshome" style="color:rgb(42, 129, 155); background-color: orange;"><h3>Descriptions</h3></th>
+                <th class="tableshome" style="color:rgb(42, 129, 155); background-color: orange;"><h3>Vender</h3></th>
+                <th class="tableshome" style="color:rgb(42, 129, 155); background-color: orange;"><h3>Manage</h3></th>
+                <th class="tableshome" style="color:rgb(42, 129, 155); background-color: orange;"><h3>Monitor</h3></th>
+                <!-- <td class="tablesaddevice">Device Name: </td> -->
+                <!-- <td class="tablesaddevice">{{ f.name }}</td> -->
+            </tr>
+            <tr>
+                <!-- <td class="tablesaddevice">IP Address: </td> -->
+                <td class="tablesaddevice">{{ f.name }}</td>
+                <td class="tablesaddevice">{{ f.ip }}</td>
+                <td class="tablesaddevice">{{ f.DeviceType }}</td>
+                <td class="tablesaddevice">{{ f.description }}</td>
+                <td class="tablesaddevice">{{ f.maker }}</td>
+                <td class="tablesaddevice">{{ f.manager }}</td>
+                <td class="tablesaddevice">{{ f.EnableMonitor}}</td>
+            </tr>
+            <!-- <tr>
+                <td class="tablesaddevice">Description: </td>
+                <td class="tablesaddevice">{{ f.description }}</td>
+            </tr>
+            <tr>
+                <td class="tablesaddevice">Monitor Active: </td>
+                <td class="tablesaddevice">{{ f.EnableMonitor}}</td>
+            </tr> -->
+    
+        </table>
+        
+        <h3><input type="submit" style="color: rgb(12, 25, 49); background-color: aqua ; font-size: 10pt; height: 50px" name="addevice_name" value="ADD NEW">   
+        </h3>
+    </form>
+    </center>
+{% endblock %}
+

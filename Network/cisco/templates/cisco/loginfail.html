@@ -1,0 +1,26 @@
+{% load static %}
+<!doctype html>
+
+<html>
+	<head>
+		<title> Login Fail! </title>
+		<link rel="stylesheet" href="{% static 'cisco/stylelogin.css' %}">
+		<link rel="icon" href="{% static 'images/cube.png' %} " type="image/png" />
+	</head>
+	<body>
+	<div class="loginBox">
+		<img src="{% static 'cisco/user.png' %}" class="user">
+        <center style="color:red"><h3>Login Fail!</h3></center>
+		<h2>Login Again!</h2>
+		<form action="" method="post">
+            {% csrf_token %}
+			<p>Username</p>
+			<input type="text" name = "username" placeholder="Enter Username">
+			<p>Password</p>
+			<input type="password" name = "password" placeholder="Enter Password">
+			<input type="submit" name = "" value="sign In">
+			<a href="/admin/password_change"> Change Password.</a>
+		</form>
+	</div>
+	</body>
+</html>
